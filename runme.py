@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import argparse 
-
+import time
 
 import pxServer
 import pxHandler 
@@ -15,8 +15,15 @@ def main():
   args = P.parse_args()
   
   srv = pxServer.ProxyServer( args, pxHandler.connectionHandler ) 
-  srv.serverLoop()
+  try:
+    srv.startThread()
+    while True:
+          time.sleep(1)
+  except KeyboardInterrupt as e:
+    print "KeyboardInterrutp !"
+    srv.shutdown()
 
+  #srv.serverLoop()
 
 
 if __name__ == "__main__":
