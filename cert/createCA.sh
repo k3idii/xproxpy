@@ -6,4 +6,4 @@ cat ca.crt ca.key > ca.pem
 
 echo -en > index.txt
 
-echo 10000 > serial
+echo 100000 > serial
