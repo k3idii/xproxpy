@@ -14,9 +14,9 @@ import StringIO
 import select 
 import http
 
-
-CERT_PATH="./cert/domains/"
-CERT_FILE="cert.pem"
+CERT_DIR   = "./cert/"
+CERT_PATH  = "%s/domains/" % CERT_DIR
+CERT_FILE  = "cert.pem"
 CERT_CACHE = dict()
 
 def getCertForHost(host):
@@ -33,7 +33,7 @@ def getCertForHost(host):
   # generate !
    
   print "SSL REQ %s " % host
-  process = subprocess.Popen([ CERT_PATH+'/createCert.sh', host] )
+  process = subprocess.Popen([ CERT_DIR+'/createCert.sh', host] )
   process.wait() 
   
   if os.path.isfile( fname ):

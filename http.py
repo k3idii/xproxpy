@@ -59,6 +59,7 @@ class httpReq:
 
   def readQuery(self):
     firstLine = self.con.rfile.readline()
+    print firstLine
     if not firstLine or len(firstLine) < 3 :
       raise Exception("Connection closed [1]!")
     if not " HTTP/" in firstLine:
