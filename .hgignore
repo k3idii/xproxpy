@@ -7,6 +7,6 @@ cert/1*pem
 cert/*attr
 cert/*old
 cert/ca.log
-cert/domains/*
+cert/domains/*.*
 
 

@@ -1,17 +1,12 @@
-import SocketServer
-import BaseHTTPServer
 import socket
-import threading
 import httplib
 import time
 import os
 import urllib
 import ssl
-import copy
 import subprocess 
 import StringIO
 
-import select 
 import http
 
 CERT_DIR   = "./cert/"
@@ -201,8 +196,6 @@ class connectionHandler():
       self.con.sendAll( answer  )
       print " << send back answer >> "
       return False
-
-
 
 
     def mangleRequest(self,req):

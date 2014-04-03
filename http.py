@@ -1,6 +1,4 @@
 import socket
-import datetime
-import copy
 import urlparse
 import select
 
